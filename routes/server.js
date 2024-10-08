@@ -11,7 +11,6 @@ var userModel = require("../models/userModel");
 var Seed = require("../config/seed");
 
 
-const cors = require('cors');
 
 /* Listenning port */
 
