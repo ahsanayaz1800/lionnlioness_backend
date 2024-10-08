@@ -24,7 +24,7 @@ http.listen(PORT, () => {
 const corsOption = {
   credentials:true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-v3.devservertd.com','https://lionnlioness-frontend-git-master-lionnlioness-projects.vercel.app'],
+  origin:['https://lionnlioness-frontend-git-master-lionnlioness-projects.vercel.app', 'http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-v3.devservertd.com'],
 
 } 
 app.use(cors(corsOption));
