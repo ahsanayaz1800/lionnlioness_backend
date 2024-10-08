@@ -35,7 +35,6 @@ const corsOptions = {
   origin: '*', // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type'], // Allowed headers
-  credentials: true // Allow cookies and credentials
 };
 
 // Apply CORS middleware
