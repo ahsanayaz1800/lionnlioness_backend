@@ -28,19 +28,29 @@ http.listen(PORT, () => {
 // } 
 // app.use(cors(corsOption));
 
-//Cors Option
+
+// Comprehensive CORS Options
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://1.1.1.111:3000', 'https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app'],
-  credentials: true,
+  origin: ['https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app', 'http://localhost:3000'], // Allow your frontend
+  credentials: true, // Allow cookies/credentials if needed
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all methods
-  allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'], // Add headers as needed
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'], // Allow specific headers
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
 
-// Use CORS middleware
+// Use CORS Middleware for All Routes
 app.use(cors(corsOptions));
 
-// Handle preflight OPTIONS requests
+// Handle Preflight Requests (OPTIONS)
 app.options('*', cors(corsOptions));
+
+// Ensure CORS Middleware is Added Before Routes
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app"); // Set CORS for allowed origin
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
 
 
 /* Middlewares */
