@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = {
 demo: async (req,res,next)=>{
-res.send("yes, it's demo")
+await res.send("yes, it's demo")
 },
   login: async (req, res, next) => {
     console.log(req.body)
