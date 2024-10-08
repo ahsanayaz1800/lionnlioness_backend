@@ -42,7 +42,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
+// Root route for testing
+app.get("/", (req, res) => {
+  res.send("Hello, Vercel!");
 
+});
 
 /* Middlewares */
 app.use(bodyParser.json({ limit: "10mb", extended: true }));
@@ -64,11 +68,7 @@ app.get("/setup", (req, resp) => {
   require("../config/setup");
   resp.send({ message: "Database Matcha created succefully" });
 });
-// Root route for testing
-app.get("/", (req, res) => {
-  res.send("Hello, Vercel!");
 
-});
 app.use("/new", userRoute.router)
 /* Socket.io */
 
