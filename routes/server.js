@@ -29,29 +29,20 @@ http.listen(PORT, () => {
 // app.use(cors(corsOption));
 
 
-// Comprehensive CORS Options
+const cors = require('cors');
+
+// CORS configuration that allows all origins
 const corsOptions = {
-  origin: ['https://lionnlioness-v3.devservertd.com', 'http://localhost:3000'], // Allow your frontend
-  credentials: true, // Allow cookies/credentials if needed
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all methods
-  allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'], // Allow specific headers
-  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+  origin: '*', // Allow all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true // Allow cookies and credentials
 };
 
-// Use CORS Middleware for All Routes
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
-// Handle Preflight Requests (OPTIONS)
-app.options('*', cors(corsOptions));
 
-// Ensure CORS Middleware is Added Before Routes
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://lionnlioness-v3.devservertd.com"); // Set CORS for allowed origin
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Set CORS for allowed origin
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  next();
-});
 
 
 /* Middlewares */
