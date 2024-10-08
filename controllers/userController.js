@@ -10,6 +10,9 @@ var notifService = require("../services/notifService");
 const jwt = require('jsonwebtoken');
 
 module.exports = {
+demo: async (req,res,next)=>{
+res.send("yes, it's demo")
+},
   login: async (req, res, next) => {
     console.log(req.body)
     var user = await UserService.getUser({
