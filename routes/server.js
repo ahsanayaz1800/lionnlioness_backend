@@ -59,9 +59,9 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 
 /*ROUTES */
-app.use("/users/", userRoute.router);
-app.use("/chat/", chatRoute.router);
-app.use("/main/", mainRoute.router);
+app.use("/users", userRoute.router);
+app.use("/chat", chatRoute.router);
+app.use("/main", mainRoute.router);
 
 
 //Configuration
