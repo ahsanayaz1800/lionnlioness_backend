@@ -51,6 +51,10 @@ app.get("/", (req, res) => {
 /* Middlewares */
 app.use(bodyParser.json({ limit: "10mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+app.use((req, res, next) => {
+    console.log(req.method, req.path, req.headers);
+    next();
+});
 
 
 /*ROUTES */
