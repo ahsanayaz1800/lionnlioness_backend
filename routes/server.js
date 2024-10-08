@@ -69,7 +69,7 @@ app.get("/", (req, res) => {
   res.send("Hello, Vercel!");
 
 });
-app.get("/new", userRoute.router)
+app.use("/new", userRoute.router)
 /* Socket.io */
 
 var connections = [];
