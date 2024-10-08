@@ -31,6 +31,9 @@ app.use(cors(corsOption));
 /* Middlewares */
 app.use(bodyParser.json({ limit: "10mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+
+
+/*ROUTES */
 app.use("/users/", userRoute.router);
 app.use("/chat/", chatRoute.router);
 app.use("/main/", mainRoute.router);
@@ -45,7 +48,11 @@ app.get("/setup", (req, resp) => {
   require("../config/setup");
   resp.send({ message: "Database Matcha created succefully" });
 });
+// Root route for testing
+app.get("/", (req, res) => {
+  res.send("Hello, Vercel!");
 
+});
 /* Socket.io */
 
 var connections = [];
