@@ -37,8 +37,8 @@ app.use(cors(corsOption));
 //   allowedHeaders: ['Content-Type'], // Allowed headers
 // };
 
-// Apply CORS middleware
-app.use(cors(corsOptions));
+// // Apply CORS middleware
+// app.use(cors(corsOptions));
 
 
 // Root route for testing
