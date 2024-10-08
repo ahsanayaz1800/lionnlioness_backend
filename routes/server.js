@@ -47,6 +47,7 @@ app.options('*', cors(corsOptions));
 // Ensure CORS Middleware is Added Before Routes
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://lionnlioness-v3.devservertd.com"); // Set CORS for allowed origin
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Set CORS for allowed origin
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   next();
