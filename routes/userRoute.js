@@ -87,6 +87,7 @@ exports.router = (() => {
     .route("/profile/:user_id/list-profile")
     .get(userController.getUserListProfileDataFromId);
     userRouter.route('/google_signin').post(userController.googleLogin);
+    userRouter.route('/demo').get(userController.demo);
 
   return userRouter;
 
