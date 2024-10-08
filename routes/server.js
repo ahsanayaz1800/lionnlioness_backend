@@ -31,7 +31,7 @@ http.listen(PORT, () => {
 
 // Comprehensive CORS Options
 const corsOptions = {
-  origin: ['https://lionnlioness-frontend-git-master-lionnlioness-projects.vercel.app', 'http://localhost:3000'], // Allow your frontend
+  origin: ['https://lionnlioness-v3.devservertd.com', 'http://localhost:3000'], // Allow your frontend
   credentials: true, // Allow cookies/credentials if needed
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all methods
   allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'], // Allow specific headers
