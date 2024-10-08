@@ -20,13 +20,28 @@ const PORT = 8080;
 http.listen(PORT, () => {
   console.log("Listening on port: ", PORT);
 });
-//Cors Option
-const corsOption = {
-  credentials:true,
-  origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app'],
+// //Cors Option
+// const corsOption = {
+//   credentials:true,
+//   origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app'],
 
-} 
-app.use(cors(corsOption));
+// } 
+// app.use(cors(corsOption));
+
+//Cors Option
+const corsOptions = {
+  origin: ['http://localhost:3000', 'http://1.1.1.111:3000', 'https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'], // Add headers as needed
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
+
+// Handle preflight OPTIONS requests
+app.options('*', cors(corsOptions));
+
 
 /* Middlewares */
 app.use(bodyParser.json({ limit: "10mb", extended: true }));
