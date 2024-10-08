@@ -9,6 +9,7 @@ var chatController = require("../controllers/chatController");
 var userController = require("../controllers/userController");
 var userModel = require("../models/userModel");
 var Seed = require("../config/seed");
+const cors = require('cors');
 
 
 
@@ -19,23 +20,22 @@ const PORT = 8080;
 http.listen(PORT, () => {
   console.log("Listening on port: ", PORT);
 });
-// //Cors Option
-// const corsOption = {
-//   credentials:true,
-//   origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-v3.devservertd.com'],
+//Cors Option
+const corsOption = {
+  credentials:true,
+  origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-v3.devservertd.com'],
 
-// } 
-// app.use(cors(corsOption));
+} 
+app.use(cors(corsOption));
 
 
-const cors = require('cors');
 
-// CORS configuration that allows all origins
-const corsOptions = {
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
-  allowedHeaders: ['Content-Type'], // Allowed headers
-};
+// // CORS configuration that allows all origins
+// const corsOptions = {
+//   origin: '*', // Allow all origins
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+//   allowedHeaders: ['Content-Type'], // Allowed headers
+// };
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
