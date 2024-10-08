@@ -23,7 +23,7 @@ http.listen(PORT, () => {
 // //Cors Option
 // const corsOption = {
 //   credentials:true,
-//   origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-frontend-6zc5nmy20-lionnlioness-projects.vercel.app'],
+//   origin:['http://localhost:3000','http://1.1.1.111:3000','https://lionnlioness-v3.devservertd.com'],
 
 // } 
 // app.use(cors(corsOption));
