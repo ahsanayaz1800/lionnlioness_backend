@@ -8,7 +8,7 @@ var input = require("../services/inputService");
 var jwtUtils = require("../services/jwtService");
 var notifService = require("../services/notifService");
 const jwt = require('jsonwebtoken');
-
+ 
 module.exports = {
 demo: async (req,res,next)=>{
 await res.send("yes, it's demo")
